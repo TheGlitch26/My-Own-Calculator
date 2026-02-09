@@ -27,9 +27,27 @@ function enterValue(value){
 //11 + 2 * 3 / 4           multiple operations case             current:1    prev:1    operation:1
 //2 + 4 = 6   + 1          continuous operations case           current:0    prev:1    operation:1
 
+
+// -4 + 23
+// 12 + 3 * -2
+//5 - 6
+//10 - 6 = 4 - 2
+//10 - 3 - 3
+//This function runs when we press an operation button
 function operation(value){
+    //First we check if the user wants to enter a  negative value or not
+    if((previousValue === "" && currentValue === "" && operationValue === "" && value === "-") || (operationValue !== "" && previousValue !== "" && value === "-")){
+        if(operationValue !== "-"){
+            currentValue += "-";
+        }
+        else {
+            calculate();
+            currentValue = "";
+            operationValue = value;
+        }
+    }
     //Case for initialization of calculation
-    if(operationValue === ""){                                              
+    else if(operationValue === "" && previousValue === ""){                                              
         operationValue = value;
         previousValue = currentValue;
         currentValue = "";
@@ -43,6 +61,7 @@ function operation(value){
     //Case for continuous calculations
     else {
         operationValue = value;
+        
     }
     displayElement.innerHTML = "";
 }
@@ -76,19 +95,23 @@ function calculate(){
     console.log("Prev:", previousValue, "Op:", operationValue, "Curr:", currentValue);
     if(operationValue === "+"){
         previousValue = add();
-        currentValue = "";    
+        currentValue = "";   
+        operationValue = ""; 
     }
     else if(operationValue === "-"){
         previousValue = subtract();
         currentValue = ""; 
+        operationValue = "";
     }
     else if(operationValue === "*"){
         previousValue = multiply();
         currentValue = ""; 
+        operationValue = "";
     }
     else if(operationValue === "/"){
         previousValue = divide();
         currentValue = ""; 
+        operationValue = "";
     }
     updateDisplay();
     return previousValue;

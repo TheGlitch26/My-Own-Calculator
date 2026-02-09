@@ -36,9 +36,11 @@ button:active {
     border: 1px solid black;
     background-color: white;
     padding: 10px;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 10px;
-    min-height: 60px;
+    min-height: 50px;
+    max-width: 420px;
+    min-width: 420px;
 }
 
 .equals {
