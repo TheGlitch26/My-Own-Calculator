@@ -5,7 +5,7 @@
 //This process repeats untill the user clicks to any operation buttons(+ - * /)
 //When this happens, program saves that input to previous value, resets the current, and is ready for new input
 //And when the user clicks to equals(=) button, program chooses the right operation(+ - / *), and calculates the result
-
+//Keyboard is also usable for calculations
 let currentValue = "";
 let previousValue = "";
 let operationValue = "";
@@ -135,3 +135,65 @@ function clearValues(){
     operationValue = "";
     displayElement.innerHTML = "";
 }
+
+//Event listener for keyboard inputs
+
+document.addEventListener("keydown", function(event){
+    switch(event.key){
+        case "1": 
+            enterValue("1");
+            break;
+        case "2": 
+            enterValue("2");
+            break;
+        case "3": 
+            enterValue("3");
+            break;
+        case "4": 
+            enterValue("4");
+            break;
+        case "5": 
+            enterValue("5");
+            break;
+        case "6": 
+            enterValue("6");
+            break;
+        case "7": 
+            enterValue("7");
+            break;
+        case "8": 
+            enterValue("8");
+            break;
+        case "9": 
+            enterValue("9");
+            break;
+        case "0": 
+            enterValue("0");
+            break;
+        case "+": 
+            operation("+");
+            break;
+        case "-": 
+            operation("-");
+            break;
+        case "*": 
+            operation("*");
+            break;
+        case "/": 
+            operation("/");
+            break;
+        case "Enter": 
+            calculate();
+            break;
+        case "=":
+            calculate();
+            break;
+        case "Escape":
+            clearValues();
+            break;
+        case "Backspace": 
+            clearValues();
+            break;
+    }
+});
+decume
