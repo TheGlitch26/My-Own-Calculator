@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="display-box"></div> 
+
+        <div class="buttons-box">
+            <button class="one" onclick="enterValue('1')">1</button>
+            <button class="two" onclick="enterValue('2')">2</button>
+            <button class="three" onclick="enterValue('3')">3</button>
+            <button class="add" onclick="operation('+')">+</button>
+            <button class="four" onclick="enterValue('4')">4</button>
+            <button class="five" onclick="enterValue('5')">5</button>
+            <button class="six" onclick="enterValue('6')">6</button>
+            <button class="subtract" onclick="operation('-')">-</button>
+            <button class="seven" onclick="enterValue('7')">7</button>
+            <button class="eight" onclick="enterValue('8')">8</button>
+            <button class="nine" onclick="enterValue('9')">9</button>
+            <button class="multiply" onclick="operation('*')">X</button>
+            <button class="clear" onclick="clearValues()">Clear</button>
+            <button class="zero" onclick="enterValue('0')">0</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="divide" onclick="operation('/')">/</button>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
